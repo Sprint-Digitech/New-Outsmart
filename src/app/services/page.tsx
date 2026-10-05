@@ -151,7 +151,10 @@ export default function Services() {
           </div>
 
           <div className="relative z-10 w-full max-w-7xl px-6 flex flex-col items-start justify-center h-full pt-16">
-            <div className="bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] inline-flex flex-col max-w-full">
+            <Link 
+              href={`/service/${service.slug}`}
+              className="bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] inline-flex flex-col max-w-full group/card cursor-pointer hover:bg-white/50 transition-colors"
+            >
               <h4 className="text-sm font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3" style={{ color: "var(--primary)" }}>
                 <span>0{idx + 1} / {service.category}</span>
               </h4>
@@ -164,14 +167,11 @@ export default function Services() {
                 {service.subtitle}
               </p>
 
-              <Link
-                href={`/service/${service.slug}`}
-                className="group inline-flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-gray-900"
-              >
+              <div className="inline-flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-gray-900">
                 <span>Explore Experience</span>
-                <span className="w-12 h-[1px] bg-gray-900 transition-all duration-300 group-hover:w-24 group-hover:bg-[--primary]"></span>
-              </Link>
-            </div>
+                <span className="w-12 h-[1px] bg-gray-900 transition-all duration-300 group-hover/card:w-24 group-hover/card:bg-[--primary]"></span>
+              </div>
+            </Link>
           </div>
         </div>
       ))}

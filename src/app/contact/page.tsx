@@ -101,7 +101,7 @@ export default function Contact() {
         {/* Map Container - Reduced height and max-width to make it "thinner" and less huge */}
         <div className="w-full max-w-[1100px] h-[350px] md:h-[450px] mx-auto bg-gray-200 rounded-3xl overflow-hidden shadow-2xl relative border-8 border-white group">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.125219420559!2d77.3175402602715!3d28.591321458284566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4f62e84d41b%3A0xc638a16dbd7daaa1!2sSector%208%2C%20Noida%2C%20Uttar%20Pradesh%20201301%2C%20India!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            src="https://maps.google.com/maps?q=111%2C%20F-Block%2C%20Sector%208%2C%20Noida%2C%20U.P.-201301&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
