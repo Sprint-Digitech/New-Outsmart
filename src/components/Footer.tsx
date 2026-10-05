@@ -168,7 +168,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-3 pr-16 md:pr-20">
             <h4 className="text-sm font-bold text-gray-300 mr-2 hidden sm:block">Follow Us:</h4>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center hover:-translate-y-1 transition-transform shadow-lg" style={{ backgroundColor: "var(--primary)" }}>
+            <a href="https://www.linkedin.com/in/outsmart-technology-1933b9357/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center hover:-translate-y-1 transition-transform shadow-lg" style={{ backgroundColor: "var(--primary)" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61594061408997" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center hover:-translate-y-1 transition-transform shadow-lg" style={{ backgroundColor: "var(--primary)" }}>

@@ -119,6 +119,7 @@ export default function ContactSection() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
                     <input 
+                      suppressHydrationWarning={true}
                       type="text" 
                       className={`w-full bg-transparent/50 border ${errors.name ? 'border-red-400 focus:border-red-500' : 'border-gray-200 hover:border-gray-300 focus:border-[--primary]'} focus:bg-white focus:ring-0 rounded-xl px-4 py-3 outline-none transition-colors`}
                       placeholder="e.g. John Doe"
@@ -134,6 +135,7 @@ export default function ContactSection() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
                     <input 
+                      suppressHydrationWarning={true}
                       type="email" 
                       className={`w-full bg-transparent/50 border ${errors.email ? 'border-red-400 focus:border-red-500' : 'border-gray-200 hover:border-gray-300 focus:border-[--primary]'} focus:bg-white focus:ring-0 rounded-xl px-4 py-3 outline-none transition-colors`}
                       placeholder="e.g. john@company.com"
@@ -150,6 +152,7 @@ export default function ContactSection() {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Project Type</label>
                   <select 
+                    suppressHydrationWarning={true}
                     className="w-full bg-transparent/50 border border-gray-200 hover:border-gray-300 focus:border-[--primary] focus:bg-white focus:ring-0 rounded-xl px-4 py-3 outline-none transition-colors appearance-none"
                     value={formData.type}
                     onChange={(e) => setFormData({...formData, type: e.target.value})}
@@ -165,6 +168,7 @@ export default function ContactSection() {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
                   <textarea 
+                    suppressHydrationWarning={true}
                     rows={5}
                     className={`w-full bg-transparent/50 border ${errors.message ? 'border-red-400 focus:border-red-500' : 'border-gray-200 hover:border-gray-300 focus:border-[--primary]'} focus:bg-white focus:ring-0 rounded-xl px-4 py-3 outline-none transition-colors resize-none`}
                     placeholder="Tell us about your project requirements, timeline, or any questions you have..."
@@ -178,6 +182,7 @@ export default function ContactSection() {
                 </div>
 
                 <button 
+                  suppressHydrationWarning={true}
                   type="submit" 
                   disabled={status === "loading"}
                   className="w-full py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-[1.02] shadow-xl flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:scale-100"
