@@ -38,7 +38,7 @@ export default function BlogSection({ hideHeader = false }: { hideHeader?: boole
           setBlogsList(localBlogs);
         }
       } catch (err) {
-        console.error("Failed to fetch live blogs, falling back to static:", err);
+        console.warn("Failed to fetch live blogs, falling back to static:", err);
         setBlogsList(localBlogs);
       }
     }

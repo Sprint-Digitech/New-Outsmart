@@ -182,14 +182,17 @@ export default function Home() {
         <TrustedBySection />
 
         {/* About Us Section */}
+        <div id="about" className="scroll-mt-24"></div>
         <AboutUsSection />
 
-        {/* Why Choose Us Section */}
+        {/* Why Choose Us / Services Section */}
+        <div id="services" className="scroll-mt-24"></div>
         <WhyChooseUsSection />
 
 
 
         {/* Projects Section (Replacing Features Section) */}
+        <div id="projects" className="scroll-mt-24"></div>
         <ProjectsSection />
 
         {/* Process Section */}
@@ -235,6 +238,7 @@ export default function Home() {
         <BlogSection />
 
         {/* Final CTA */}
+        <div id="contact" className="scroll-mt-24"></div>
         <section className="py-10 md:py-8 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <Text3DBounce as="h2" className="text-4xl md:text-6xl font-bold mb-8">Ready to Outsmart the Competition?</Text3DBounce>

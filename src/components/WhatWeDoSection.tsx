@@ -52,7 +52,7 @@ export default function WhatWeDoSection() {
           setServicesList(formatted);
         }
       } catch (err) {
-        console.error("Failed to fetch services:", err);
+        console.warn("Failed to fetch services:", err);
       }
     }
     fetchServices();
@@ -146,7 +146,7 @@ export default function WhatWeDoSection() {
             {/* We use an unDraw/Popsy style tech illustration that matches the layout, or the pointing businessman if preferred. 
                 For now, let's use a high-quality illustration of a tech professional/team */}
             <img 
-              src="https://illustrations.popsy.co/amber/freelancer.svg" 
+              src="/ai_expert_illustration_transparent.png" 
               alt="Expert Software Engineer" 
               className="w-full h-auto drop-shadow-2xl object-contain transform scale-110"
             />

@@ -32,7 +32,9 @@ export default function Projects() {
           .select("*")
           .order("created_at", { ascending: false });
 
-        if (error) throw error;
+        if (error) {
+          console.warn("Supabase fetch failed (projects). Using fallback data.");
+        }
 
         if (data && data.length > 0) {
           const formatted = data.map((p) => ({
@@ -51,7 +53,7 @@ export default function Projects() {
           setCategories(["All", ...uniqueCategories]);
         }
       } catch (err) {
-        console.error("Failed to fetch projects:", err);
+        console.warn("Failed to fetch projects:", err);
       }
     }
     fetchProjects();

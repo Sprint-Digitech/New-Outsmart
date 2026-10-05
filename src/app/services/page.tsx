@@ -23,7 +23,9 @@ export default function Services() {
           .select("*")
           .order("created_at", { ascending: true });
 
-        if (error) throw error;
+        if (error) {
+          console.warn("Supabase fetch failed (services). Using fallback data.");
+        }
         
         if (data && data.length > 0) {
           setServicesList(data);
@@ -37,7 +39,7 @@ export default function Services() {
           ]);
         }
       } catch (err) {
-        console.error("Failed to fetch services:", err);
+        console.warn("Failed to fetch services:", err);
       }
     }
     fetchServices();

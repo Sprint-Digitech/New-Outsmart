@@ -50,7 +50,16 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item.name} className="flex items-center gap-2">
                   <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--primary)" }}></span>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm font-medium">
+                  <Link 
+                    href={item.href} 
+                    className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+                    onClick={(e) => {
+                      if (window.location.pathname === item.href) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     {item.name}
                   </Link>
                 </li>

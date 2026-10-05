@@ -64,6 +64,12 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={`relative text-[15px] font-bold transition-colors hover:text-[--primary] ${pathname === link.href ? 'text-[--primary]' : 'text-gray-800'}`}
+              onClick={(e) => {
+                if (window.location.pathname === link.href) {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
             >
               {link.name}
               {pathname === link.href && (
@@ -111,7 +117,13 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    if (window.location.pathname === link.href) {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className={clsx(
                     "text-lg font-bold py-3 px-4 rounded-xl transition-colors",
                     pathname === link.href ? "text-white shadow-md" : "text-gray-800 hover:bg-gray-50"

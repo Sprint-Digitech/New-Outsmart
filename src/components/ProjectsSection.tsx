@@ -34,7 +34,7 @@ export default function ProjectsSection() {
           setProjectsList(projectsData.slice(0, 3));
         }
       } catch (err) {
-        console.error("Failed to fetch projects, falling back to static:", err);
+        console.warn("Failed to fetch projects, falling back to static:", err);
         setProjectsList(projectsData.slice(0, 3));
       }
     }

@@ -62,7 +62,7 @@ export default function ServicesSection() {
           setServicesList(formatted);
         }
       } catch (err) {
-        console.error("Failed to fetch services:", err);
+        console.warn("Failed to fetch services:", err);
       }
     }
     fetchServices();
