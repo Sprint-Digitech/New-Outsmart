@@ -1,3 +1,5 @@
+"use client";
+
 import { Bell, Search } from "lucide-react";
 
 export default function Header() {
@@ -13,7 +15,10 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-6">
-        <button className="relative p-2 text-gray-500 hover:text-gray-900 transition-colors">
+        <button 
+          onClick={() => alert("No new notifications")}
+          className="relative p-2 text-gray-500 hover:text-gray-900 transition-colors"
+        >
           <Bell size={20} />
           <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-[#8a198c] border-2 border-white rounded-full"></span>
         </button>

@@ -1,5 +1,6 @@
 import { TrendingUp, Users, Eye, CheckCircle, Plus } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
+import Link from "next/link";
 
 export const revalidate = 0; // Disable cache to always fetch latest data
 
@@ -19,17 +20,25 @@ export default async function AdminDashboard() {
     .from('projects')
     .select('*', { count: 'exact', head: true });
 
+  const { count: blogsCount } = await supabase
+    .from('blogs')
+    .select('*', { count: 'exact', head: true });
+
+  const { count: servicesCount } = await supabase
+    .from('services')
+    .select('*', { count: 'exact', head: true });
+
   const recentInquiries = inquiries || [];
   const actualInquiriesCount = inquiriesCount || 0;
   
   // Fallbacks based on our static data if database is empty
   const actualProjectsCount = projectsCount && projectsCount > 0 ? projectsCount : 6; 
+  const actualBlogsCount = blogsCount && blogsCount > 0 ? blogsCount : 3;
+  const actualServicesCount = servicesCount && servicesCount > 0 ? servicesCount : 4;
   
-  // Let's replace "Total Views" and "Unique Visitors" with more useful metrics like Services and Blogs, 
-  // or just hardcode them to what the user expects if they prefer. Let's use useful metrics.
   const stats = [
-    { title: "Total Views", value: "24.5K", change: "+14%", icon: Eye, color: "text-[#8a198c]", bg: "bg-[#8a198c]/10" },
-    { title: "Unique Visitors", value: "12.2K", change: "+8%", icon: Users, color: "text-pink-500", bg: "bg-pink-500/10" },
+    { title: "Total Services", value: actualServicesCount.toString(), change: "Live", icon: Eye, color: "text-[#8a198c]", bg: "bg-[#8a198c]/10" },
+    { title: "Published Blogs", value: actualBlogsCount.toString(), change: "Live", icon: Users, color: "text-pink-500", bg: "bg-pink-500/10" },
     { title: "New Inquiries", value: actualInquiriesCount.toString(), change: "Live", icon: TrendingUp, color: "text-green-500", bg: "bg-green-500/10" },
     { title: "Projects Completed", value: actualProjectsCount.toString(), change: "Live", icon: CheckCircle, color: "text-orange-500", bg: "bg-orange-500/10" },
   ];
@@ -129,20 +138,20 @@ export default async function AdminDashboard() {
         <div className="bg-white border border-gray-100 shadow-sm shadow-gray-200/50 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-6">Quick Actions</h2>
           <div className="flex flex-col gap-3">
-            <button className="w-full py-3.5 px-4 bg-gradient-to-r from-[#8a198c] to-pink-600 hover:opacity-90 text-white rounded-xl text-sm font-bold transition-opacity shadow-md shadow-pink-500/20 text-left flex items-center justify-between group">
+            <Link href="/admin/projects" className="w-full py-3.5 px-4 bg-gradient-to-r from-[#8a198c] to-pink-600 hover:opacity-90 text-white rounded-xl text-sm font-bold transition-opacity shadow-md shadow-pink-500/20 text-left flex items-center justify-between group">
               <span className="flex items-center gap-2">
                 <Plus size={16} />
                 Add New Project
               </span>
-            </button>
-            <button className="w-full py-3.5 px-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 rounded-xl text-sm font-bold transition-colors text-left flex items-center justify-between group">
+            </Link>
+            <Link href="/admin/blog" className="w-full py-3.5 px-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 rounded-xl text-sm font-bold transition-colors text-left flex items-center justify-between group">
               Write Blog Post
               <Plus size={16} className="text-gray-400 group-hover:text-gray-700" />
-            </button>
-            <button className="w-full py-3.5 px-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 rounded-xl text-sm font-bold transition-colors text-left flex items-center justify-between group">
+            </Link>
+            <Link href="/admin/services" className="w-full py-3.5 px-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 rounded-xl text-sm font-bold transition-colors text-left flex items-center justify-between group">
               Update Services
               <Plus size={16} className="text-gray-400 group-hover:text-gray-700" />
-            </button>
+            </Link>
           </div>
 
           <h2 className="text-xl font-bold text-gray-900 mt-10 mb-6">Recent Activity</h2>
