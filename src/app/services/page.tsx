@@ -159,7 +159,7 @@ export default function Services() {
                 <span>0{idx + 1} / {service.category}</span>
               </h4>
 
-              <h2 className="text-4xl md:text-6xl lg:text-5xl font-serif tracking-tight text-gray-900 leading-[1.1] mb-4 drop-shadow-sm whitespace-nowrap">
+              <h2 className="text-4xl md:text-6xl lg:text-5xl font-serif tracking-tight text-gray-900 leading-[1.1] mb-4 drop-shadow-sm whitespace-normal md:whitespace-nowrap">
                 {service.title}
               </h2>
 
